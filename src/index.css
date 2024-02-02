@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Inria Sans", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(255, 247, 254);
+}
+
+.clip-path {
+  clip-path: polygon(2.5% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.no-clip-path {
+  clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.crazy-round {
+  border-radius: 50% 25% / 25% 50%;
+  border-radius: 14% 86% 60% 40% / 38% 29% 71% 62%;
+}
+&& .ant-select .ant-select-selector {
+  padding-left: calc(3rem - 8px);
+}
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  border: 1px solid #d6d6d6;
+  background: #ffffff;
+  padding: 8px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+input[type="date"],
+focus {
+  color: #95a5a6;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}

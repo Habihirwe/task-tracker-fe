@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   withCredentials: true,
-  baseURL: "http://localhost:8000/api/",
+  baseURL: "https://task-tracker-vecp.onrender.com",
 });
 
 axiosInstance.interceptors.request.use(
@@ -18,15 +18,5 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// axiosInstance.interceptors.response.use(
-//   (response) => response,
-//   (error) => {
-//     if (error?.response?.status === 500) {
-//       localStorage.removeItem("userToken");
-//       window.location.href = "/login";
-//     }
-//     return Promise.reject(error);
-//   }
-// );
 
 export default axiosInstance;

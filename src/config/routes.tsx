@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import InProgress from "../components/InProgress";
 import InQueue from "../components/InQueue";

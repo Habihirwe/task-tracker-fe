@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  withCredentials: true,
   baseURL: "https://task-tracker-vecp.onrender.com/api",
 });
 

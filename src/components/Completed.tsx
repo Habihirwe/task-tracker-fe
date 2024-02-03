@@ -4,6 +4,7 @@ import { DataType, date, intDateFormat } from "../pages/Dashboard";
 import { useDispatch, useSelector } from "../redux";
 import { fetckTasks, selectTask } from "../redux/slices/task";
 import { useNavigate } from "react-router-dom";
+import { Progress } from "antd";
 
 const Completed: React.FC = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,13 @@ const Completed: React.FC = () => {
         <div className="flex flex-wrap gap-3 justify-start content-center mx-auto pt-5">
           {data ? (
             data?.map((task: any) => {
+              const completedTasks  = task.subtasks?.filter((subtask: any)=>subtask.status === 'Completed');
+              const totalTasks = task.subtasks?.length;
+              const completedPercentage = totalTasks > 0 ? Math.round((completedTasks?.length/totalTasks)*100) : 0;
+              
               return (
                 <div
-                  className="w-60 h-60 bg-zinc-50 shadow-lg p-2 rounded-md border cursor-pointer"
+                  className="w-60 h-60 bg-zinc-50 shadow-lg p-2 rounded-md border cursor-pointer relative"
                   onClick={() => {
                     navigate(`/dashboard/task/${task._id}`);
                   }}
@@ -48,6 +53,9 @@ const Completed: React.FC = () => {
                     {task.title}
                   </h1>
                   <p>{task.description}</p>
+                  <div className="absolute bottom-2 left-2 right-2">
+                    <Progress percent={completedPercentage}/>
+                  </div>
                 </div>
               );
             })

@@ -179,7 +179,7 @@ const Dashboard: React.FC = () => {
             task.status === "Canceled"
           ? ["Details"]
           : task.status === "Started"
-          ? ["Cancel"]
+          ? ["Cancel", "Complete"]
           : [],
     };
   });
